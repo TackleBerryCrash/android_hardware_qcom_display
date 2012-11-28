@@ -61,7 +61,6 @@ void initContext(hwc_context_t *ctx)
     ctx->mMDP.panel = qdutils::MDPVersion::getInstance().getPanelType();
     ctx->mExtDisplay = new ExternalDisplay(ctx);
     ctx->mLayerCache = new LayerCache();
-    MDPComp::init(ctx);
 
     pthread_mutex_init(&(ctx->vstate.lock), NULL);
     pthread_cond_init(&(ctx->vstate.cond), NULL);

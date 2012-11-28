@@ -111,9 +111,13 @@ bool VideoOverlay::configure(hwc_context_t *ctx, int dpy,
         isFgFlag = ovutils::IS_FG_SET;
     }
 
+    //TODO change to 1 always when primary FB uses overlay.
+    const ovutils::eZorder zorder = (dpy == HWC_DISPLAY_PRIMARY) ?
+            ovutils::ZORDER_0 : ovutils::ZORDER_1;
+
     ovutils::PipeArgs parg(mdpFlags,
             info,
-            ovutils::ZORDER_1,
+            zorder,
             isFgFlag,
             ovutils::ROT_FLAG_DISABLED);
 
