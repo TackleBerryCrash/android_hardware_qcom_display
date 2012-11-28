@@ -19,7 +19,6 @@
 #include "hwc_mdpcomp.h"
 #include <sys/ioctl.h>
 #include "external.h"
-#include "mdp_version.h"
 
 namespace qhwc {
 
