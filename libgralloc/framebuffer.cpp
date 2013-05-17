@@ -36,7 +36,7 @@
 
 #include <GLES/gl.h>
 
-#include "gralloc_priv.h"
+#include <gralloc_priv.h>
 #include "fb_priv.h"
 #include "gr.h"
 #include <genlock.h>
@@ -125,6 +125,7 @@ static int fb_post(struct framebuffer_device_t* dev, buffer_handle_t buffer)
 static int fb_compositionComplete(struct framebuffer_device_t* dev)
 {
     // TODO: Properly implement composition complete callback
+    glFinish();
 
     return 0;
 }
