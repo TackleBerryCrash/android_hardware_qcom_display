@@ -580,12 +580,6 @@ bool MDPComp::init(hwc_context_t *ctx) {
            idle_timeout = atoi(property);
     }
 
-    sPreRotation = true;
-    if(property_get("debug.prerotation.disable", property, NULL) > 0) {
-        if(atoi(property) != 0)
-           sPreRotation = false;
-    }
-
     //create Idle Invalidator
     idleInvalidator = IdleInvalidator::getInstance();
 
